@@ -7,6 +7,10 @@ const GlobalStyles = createGlobalStyle`
       box-sizing: border-box;
       font-family: 'Roboto', sans-serif;
     }
+    .container {
+      width: 1024px;
+      margin: 0 auto;
+    }
 `
 export const cores = {
   salmaoClaro: '#FFEBD9',
