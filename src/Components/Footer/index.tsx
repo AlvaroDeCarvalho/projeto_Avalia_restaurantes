@@ -2,8 +2,8 @@ import Logo from '../../assents/image/logo.png'
 import * as S from './styles'
 
 import faceLogo from '../../assents/image/facebook.png'
-import instaLogo from '../../assents/image/facebook.png'
-import twiiterLogo from '../../assents/image/facebook.png'
+import instaLogo from '../../assents/image/instagram-round-svgrepo-com (1) 1.png'
+import twiiterLogo from '../../assents/image/twitter-2-svgrepo-com 1.png'
 
 const Footer = () => {
   return (
