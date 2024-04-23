@@ -5,8 +5,8 @@ import Header from './Components/Header'
 function App() {
   return (
     <>
+      <GlobalStyles />
       <BrowserRouter>
-        <GlobalStyles />
         <Header />
         <Router />
       </BrowserRouter>

@@ -1,5 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
 
+export const cores = {
+  salmaoClaro: '#FFEBD9',
+  Salmao: '#E66767',
+  branca: '#FFFFFF',
+  backgroundColor: '#fff8f2',
+  backgroundColorFooter: '#FFEBD9'
+}
 const GlobalStyles = createGlobalStyle`
     * {
       padding: 0;
@@ -12,10 +19,5 @@ const GlobalStyles = createGlobalStyle`
       margin: 0 auto;
     }
 `
-export const cores = {
-  salmaoClaro: '#FFEBD9',
-  Salmao: '#E66767',
-  branca: '#FFFFFF'
-}
 
 export default GlobalStyles
