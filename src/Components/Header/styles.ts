@@ -1,16 +1,28 @@
 import styled from 'styled-components'
 import BackgroundImage from '../../assents/image/Vectorlogo.png'
+import BackgroundCardapio from '../../assents/image/imagemdefundo.png'
 import { cores } from '../../styles'
-export const Container = styled.div`
+import { Link } from 'react-router-dom'
+
+type Props = {
+  tamanho: 'big' | 'small'
+}
+
+export const Container = styled.div<Props>`
   background-image: url(${BackgroundImage});
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   max-width: 100%;
-  height: 360px;
+  height: ${(props) => (props.tamanho === 'big' ? '360px' : '180px')};
   display: block;
 `
-
+export const LinkRestaurante = styled(Link)`
+  color: ${cores.Salmao};
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+`
 export const Itens = styled.div`
   display: flex;
   align-items: center;
@@ -21,9 +33,19 @@ export const Itens = styled.div`
   }
 `
 
-export const Text = styled.h2`
-  font-size: 36px;
+export const ItensCarrinho = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  img {
+    margin-top: 36px;
+    margin-bottom: 64px;
+  }
+`
+export const Text = styled.h2<Props>`
+  font-size: ${(props) => (props.tamanho === 'big' ? '36px' : '18px')};
   font-weight: bold;
-  line-height: 42px;
+  line-height: ${(props) => (props.tamanho === 'big' ? '36px' : '22px')};
   color: ${cores.Salmao};
 `

@@ -1,21 +1,39 @@
 import * as S from './styles'
 import Logo from '../../assents/image/logo.png'
-
-const Header = () => {
-  return (
-    <>
-      <S.Container>
-        <div className="container">
-          <S.Itens>
-            <img src={Logo} />
-            <S.Text>
-              Viva experiências gastronômicas <br /> no conforto da sua casa
-            </S.Text>
-          </S.Itens>
-        </div>
-      </S.Container>
-    </>
-  )
+type Props = {
+  typeHeader: 'Home' | 'Cardapio'
+}
+const Header = ({ typeHeader }: Props) => {
+  if (typeHeader === 'Home') {
+    return (
+      <>
+        <S.Container tamanho="big">
+          <div className="container">
+            <S.Itens>
+              <img src={Logo} />
+              <S.Text tamanho="big">
+                Viva experiências gastronômicas <br /> no conforto da sua casa
+              </S.Text>
+            </S.Itens>
+          </div>
+        </S.Container>
+      </>
+    )
+  } else {
+    return (
+      <>
+        <S.Container tamanho="small">
+          <div className="container">
+            <S.ItensCarrinho>
+              <S.LinkRestaurante to={'/'}>Restaurantes</S.LinkRestaurante>
+              <img src={Logo} />
+              <S.Text tamanho="small">0 produto(s) no corrinho</S.Text>
+            </S.ItensCarrinho>
+          </div>
+        </S.Container>
+      </>
+    )
+  }
 }
 
 export default Header
