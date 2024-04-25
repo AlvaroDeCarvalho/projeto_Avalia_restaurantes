@@ -8,7 +8,7 @@ const LojaList = () => {
     new ObjetoLoja(
       [],
       'japones',
-      'Teteca Food',
+      'Japones italiano',
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
       4.1,
       imagemLoja,
@@ -17,7 +17,7 @@ const LojaList = () => {
     new ObjetoLoja(
       [],
       'japones',
-      'Teteca Food',
+      'Japones italiano',
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
       2.9,
       imagemLoja,
@@ -26,7 +26,7 @@ const LojaList = () => {
     new ObjetoLoja(
       ['em breve'],
       'japones',
-      'Teteca Food',
+      'Japones italiano',
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
       3.9,
       imagemLoja,
@@ -35,7 +35,7 @@ const LojaList = () => {
     new ObjetoLoja(
       ['em breve'],
       'japones',
-      'Teteca Food',
+      'Japones italiano',
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
       1.9,
       imagemLoja,
@@ -44,7 +44,7 @@ const LojaList = () => {
     new ObjetoLoja(
       [],
       'japones',
-      'Teteca Food',
+      'Japones italiano',
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
       4.9,
       imagemLoja,
@@ -53,7 +53,7 @@ const LojaList = () => {
     new ObjetoLoja(
       [],
       'japones',
-      'Teteca Food',
+      'Japones italiano',
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
       4.9,
       imagemLoja,
