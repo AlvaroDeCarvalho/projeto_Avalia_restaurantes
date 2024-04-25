@@ -1,7 +1,7 @@
 import * as S from './styles'
 
 import ObjetoLoja from '../../models/ObjectLoja'
-import Loja from '../Loja/index'
+import Loja from '../../Components/Loja/index'
 import imagemLoja from '../../assents/image/imagem.png'
 const LojaList = () => {
   const arrayLojas: ObjetoLoja[] = [

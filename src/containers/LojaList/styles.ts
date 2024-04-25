@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { TagContainer } from '../Tag/styled'
+import { TagContainer } from '../../Components/Tag/styled'
 import { cores } from '../../styles'
 
 export const ContainerList = styled.div`

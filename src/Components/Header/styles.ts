@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import BackgroundImage from '../../assents/image/Vectorlogo.png'
-import BackgroundCardapio from '../../assents/image/imagemdefundo.png'
 import { cores } from '../../styles'
 import { Link } from 'react-router-dom'
 
