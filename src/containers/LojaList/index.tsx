@@ -2,13 +2,13 @@ import * as S from './styles'
 
 import ObjetoLoja from '../../models/ObjectLoja'
 import Loja from '../../Components/Loja/index'
-import imagemLoja from '../../assents/image/imagem.png'
+import imagemLoja from '../../assents/image/imageComidaItaliana.png'
 const LojaList = () => {
   const arrayLojas: ObjetoLoja[] = [
     new ObjetoLoja(
       [],
-      'japones',
-      'Japones italiano',
+      'Italiana',
+      ' La Dolce Vita',
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
       4.1,
       imagemLoja,
@@ -16,8 +16,8 @@ const LojaList = () => {
     ),
     new ObjetoLoja(
       [],
-      'japones',
-      'Japones italiano',
+      'Italiana',
+      ' La Dolce Vita',
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
       2.9,
       imagemLoja,
@@ -25,8 +25,8 @@ const LojaList = () => {
     ),
     new ObjetoLoja(
       ['em breve'],
-      'japones',
-      'Japones italiano',
+      'Italiana',
+      ' La Dolce Vita',
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
       3.9,
       imagemLoja,
@@ -34,8 +34,8 @@ const LojaList = () => {
     ),
     new ObjetoLoja(
       ['em breve'],
-      'japones',
-      'Japones italiano',
+      'Italiana',
+      ' La Dolce Vita',
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
       1.9,
       imagemLoja,
@@ -43,8 +43,8 @@ const LojaList = () => {
     ),
     new ObjetoLoja(
       [],
-      'japones',
-      'Japones italiano',
+      'Italiana',
+      ' La Dolce Vita',
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
       4.9,
       imagemLoja,
@@ -52,8 +52,8 @@ const LojaList = () => {
     ),
     new ObjetoLoja(
       [],
-      'japones',
-      'Japones italiano',
+      'Italiana',
+      ' La Dolce Vita',
       'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
       4.9,
       imagemLoja,
