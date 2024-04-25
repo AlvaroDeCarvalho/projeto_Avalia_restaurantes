@@ -13,13 +13,19 @@ const Footer = () => {
       <div>
         <S.ListPortifolio>
           <li>
-            <img src={instaLogo} />
+            <a href="#">
+              <img src={instaLogo} />
+            </a>
           </li>
           <li>
-            <img src={faceLogo} />
+            <a href="#">
+              <img src={faceLogo} />
+            </a>
           </li>
           <li>
-            <img src={twiiterLogo} />
+            <a href="#">
+              <img src={twiiterLogo} />
+            </a>
           </li>
         </S.ListPortifolio>
       </div>
