@@ -25,9 +25,11 @@ const Header = ({ typeHeader }: Props) => {
         <S.Container tamanho="small">
           <div className="container">
             <S.ItensCarrinho>
-              <S.LinkRestaurante to={'/'}>Restaurantes</S.LinkRestaurante>
-              <img src={Logo} />
-              <S.Text tamanho="small">0 produto(s) no corrinho</S.Text>
+              <div>
+                <S.LinkRestaurante to={'/'}>Restaurantes</S.LinkRestaurante>
+                <img src={Logo} />
+                <S.Text tamanho="small">0 produto(s) no corrinho</S.Text>
+              </div>
             </S.ItensCarrinho>
           </div>
         </S.Container>

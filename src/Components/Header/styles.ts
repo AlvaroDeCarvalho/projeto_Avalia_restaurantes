@@ -33,11 +33,15 @@ export const Itens = styled.div`
 `
 
 export const ItensCarrinho = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
   align-items: center;
-  justify-items: center;
-  img {
+  justify-content: center;
+  div {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
     margin-top: 36px;
     margin-bottom: 64px;
   }
