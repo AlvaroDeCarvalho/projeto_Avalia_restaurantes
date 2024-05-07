@@ -10,19 +10,21 @@ export interface ObjectStore {
   avaliacao: number
   descricao: string
   capa: string
-  cardapio: {
-    foto: string
-    preco: string
-    nome: string
-    id: number
-    descricao: string
-    porcao: string
-  }
+  cardapio: [
+    {
+      foto: string
+      preco: string
+      nome: string
+      id: number
+      descricao: string
+      porcao: string
+    }
+  ]
 }
 export const Home = () => {
   const [restaurante, setRestaurante] = useState<ObjectStore[]>([])
   useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/`)
+    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes/')
       .then((res) => res.json())
       .then((res) => setRestaurante(res))
   }, [])

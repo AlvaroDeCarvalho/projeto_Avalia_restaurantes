@@ -3,7 +3,7 @@ import { ObjectStore } from '../../pages/Home'
 import * as S from './styles'
 
 type Props = {
-  restaurante: ObjectStore[]
+  restaurante: ObjectStore
 }
 
 const ItemList = ({ restaurante }: Props) => {
@@ -11,12 +11,12 @@ const ItemList = ({ restaurante }: Props) => {
     <>
       <div className="container">
         <S.ContainerItensList>
-          {restaurante.map((props) => (
+          {restaurante.cardapio.map((props) => (
             <ItemLoja
               key={props.id}
-              title={props.cardapio.nome}
-              imagem={props.cardapio.foto}
-              description={props.cardapio.descricao}
+              title={props.nome}
+              imagem={props.foto}
+              description={props.descricao}
             />
           ))}
         </S.ContainerItensList>

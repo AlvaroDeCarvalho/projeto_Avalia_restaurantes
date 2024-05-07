@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react'
 
 const Cardapio = () => {
   const { id } = useParams()
-  const [restaurante, setRestaurante] = useState<ObjectStore[]>([])
+  const [restaurante, setRestaurante] = useState<ObjectStore>()
   useEffect(() => {
     fetch(`https://fake-api-tau.vercel.app/api/eplay/jogos/${id}`)
       .then((res) => res.json())

@@ -42,7 +42,7 @@ const Loja = ({
           </div>
         </S.ContainerAvalicao>
         <S.Paragrafo>{description}</S.Paragrafo>
-        <Tag typeOfTag="button" to="/cardapio">
+        <Tag typeOfTag="button" to={`/cardapio/${id}`}>
           Saiba mais
         </Tag>
       </S.Card>
