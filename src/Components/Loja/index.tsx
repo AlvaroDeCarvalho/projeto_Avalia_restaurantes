@@ -21,6 +21,13 @@ const Loja = ({
   id,
   destacado
 }: Props) => {
+  const doneDescription = (description: string) => {
+    if (description.length > 121) {
+      return `${description.slice(0, 119)} ...`
+    }
+    return description
+  }
+
   return (
     <>
       <S.Card to={`/cardapip/${id}`}>
@@ -41,7 +48,7 @@ const Loja = ({
             <img src={estrela} />
           </div>
         </S.ContainerAvalicao>
-        <S.Paragrafo>{description}</S.Paragrafo>
+        <S.Paragrafo>{doneDescription(description)}</S.Paragrafo>
         <Tag typeOfTag="button" to={`/cardapio/${id}`}>
           Saiba mais
         </Tag>

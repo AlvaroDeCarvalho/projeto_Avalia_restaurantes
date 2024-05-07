@@ -11,6 +11,8 @@ export const Card = styled(Link)`
   text-decoration: none;
 `
 export const LogoCard = styled.img`
+  height: 250px;
+  object-fit: cover;
   width: 100%;
 `
 

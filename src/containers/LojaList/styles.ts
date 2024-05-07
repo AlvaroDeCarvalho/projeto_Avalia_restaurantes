@@ -11,6 +11,7 @@ export const ContainerList = styled.div`
   }
 `
 export const List = styled.ul`
+  list-style: none;
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 80px;
