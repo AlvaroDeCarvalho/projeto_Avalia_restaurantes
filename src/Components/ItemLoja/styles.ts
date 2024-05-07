@@ -6,7 +6,9 @@ export const Card = styled.div`
   padding: 8px;
   color: ${cores.salmaoClaro};
   img {
+    height: 250px;
     width: 100%;
+    object-fit: cover;
   }
   div {
     h3 {

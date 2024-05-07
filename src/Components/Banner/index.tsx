@@ -1,19 +1,19 @@
+import { ObjectStore } from '../../pages/Home'
 import * as S from './styles'
 
 type Props = {
-  tipoComida?: string
-  nomeRestaurante?: string
+  restaurante: ObjectStore
 }
 
-const Banner = ({ tipoComida, nomeRestaurante }: Props) => {
+const Banner = ({ restaurante }: Props) => {
   return (
     <>
       <S.BannerContainer>
         <div className="container">
           <S.ElementContainer>
-            <p>Italiana {tipoComida}</p>
+            <p> {restaurante.tipo}</p>
 
-            <h2>La Dolce Vita Trattoria {nomeRestaurante}</h2>
+            <h2> {restaurante.titulo}</h2>
           </S.ElementContainer>
         </div>
       </S.BannerContainer>

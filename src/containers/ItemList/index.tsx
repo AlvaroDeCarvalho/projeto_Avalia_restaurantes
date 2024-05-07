@@ -1,4 +1,5 @@
 import ItemLoja from '../../Components/ItemLoja'
+import { doneDescription } from '../../Components/Loja'
 import { ObjectStore } from '../../pages/Home'
 import * as S from './styles'
 
@@ -7,17 +8,24 @@ type Props = {
 }
 
 const ItemList = ({ restaurante }: Props) => {
+  if (!restaurante.cardapio) {
+    return <>Carregando...</>
+  }
+
   return (
     <>
       <div className="container">
         <S.ContainerItensList>
           {restaurante.cardapio.map((props) => (
-            <ItemLoja
-              key={props.id}
-              title={props.nome}
-              imagem={props.foto}
-              description={props.descricao}
-            />
+            <>
+              <li key={props.id}>
+                <ItemLoja
+                  title={props.nome}
+                  imagem={props.foto}
+                  description={doneDescription(props.descricao)}
+                />
+              </li>
+            </>
           ))}
         </S.ContainerItensList>
       </div>

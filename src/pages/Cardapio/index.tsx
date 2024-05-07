@@ -9,7 +9,7 @@ const Cardapio = () => {
   const { id } = useParams()
   const [restaurante, setRestaurante] = useState<ObjectStore>()
   useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/eplay/jogos/${id}`)
+    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
       .then((res) => res.json())
       .then((res) => setRestaurante(res))
   }, [id])
@@ -19,7 +19,7 @@ const Cardapio = () => {
   return (
     <>
       <Header typeHeader="Cardapio" />
-      <Banner />
+      <Banner restaurante={restaurante} />
       <ItemList restaurante={restaurante} />
     </>
   )

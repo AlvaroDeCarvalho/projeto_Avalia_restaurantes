@@ -12,6 +12,12 @@ type Props = {
   destacado: boolean
 }
 
+export const doneDescription = (description: string) => {
+  if (description.length > 121) {
+    return `${description.slice(0, 119)} ...`
+  }
+  return description
+}
 const Loja = ({
   image,
   title,
@@ -21,16 +27,9 @@ const Loja = ({
   id,
   destacado
 }: Props) => {
-  const doneDescription = (description: string) => {
-    if (description.length > 121) {
-      return `${description.slice(0, 119)} ...`
-    }
-    return description
-  }
-
   return (
     <>
-      <S.Card to={`/cardapip/${id}`}>
+      <S.Card to={`/cardapio/${id}`}>
         <S.ComponentsInfo>
           <Tag typeOfTag="info">{tipo}</Tag>
           {destacado && (

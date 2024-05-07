@@ -2,7 +2,7 @@ import Header from '../../Components/Header'
 import LojaList from '../../containers/LojaList'
 import { useEffect, useState } from 'react'
 
-export interface ObjectStore {
+export type ObjectStore = {
   id: number
   destacado: boolean
   titulo: string
