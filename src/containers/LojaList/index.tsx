@@ -1,88 +1,29 @@
 import * as S from './styles'
 
-import ObjetoLoja from '../../models/ObjectLoja'
 import Loja from '../../Components/Loja/index'
-import imagemLoja from '../../assents/image/imageComidaItaliana.png'
-const LojaList = () => {
-  const arrayLojas: ObjetoLoja[] = [
-    new ObjetoLoja(
-      [],
-      'Italiana',
-      ' La Dolce Vita',
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-      4.1,
-      imagemLoja,
-      1
-    ),
-    new ObjetoLoja(
-      [],
-      'Italiana',
-      ' La Dolce Vita',
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-      2.9,
-      imagemLoja,
-      2
-    ),
-    new ObjetoLoja(
-      ['em breve'],
-      'Italiana',
-      ' La Dolce Vita',
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-      3.9,
-      imagemLoja,
-      3
-    ),
-    new ObjetoLoja(
-      ['em breve'],
-      'Italiana',
-      ' La Dolce Vita',
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-      1.9,
-      imagemLoja,
-      4
-    ),
-    new ObjetoLoja(
-      [],
-      'Italiana',
-      ' La Dolce Vita',
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-      4.9,
-      imagemLoja,
-      5
-    ),
-    new ObjetoLoja(
-      [],
-      'Italiana',
-      ' La Dolce Vita',
-      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!',
-      4.9,
-      imagemLoja,
-      6
-    )
-  ]
+import { ObjectStore } from '../../pages/Home'
+
+type Props = {
+  restaurantes: ObjectStore[]
+}
+const LojaList = ({ restaurantes }: Props) => {
   return (
     <S.ContainerList>
       <div className="container">
         <S.List>
-          {arrayLojas.map(
-            ({
-              title,
-              image,
-              description,
-              infos,
-              avaliacao,
-              id
-            }: ObjetoLoja) => (
+          {restaurantes.map((item) => (
+            <li key={item.id}>
               <Loja
-                title={title}
-                key={id}
-                image={image}
-                avaliacao={avaliacao}
-                description={description}
-                infos={infos}
+                title={item.titulo}
+                id={item.id}
+                image={item.capa}
+                avaliacao={item.avaliacao}
+                description={item.descricao}
+                tipo={item.tipo}
+                destacado={item.destacado}
               />
-            )
-          )}
+            </li>
+          ))}
         </S.List>
       </div>
     </S.ContainerList>

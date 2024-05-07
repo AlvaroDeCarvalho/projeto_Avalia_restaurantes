@@ -6,20 +6,31 @@ type Props = {
   image: string
   title: string
   description: string
-  infos: string[]
+  tipo: string
   avaliacao: number
+  id: number
+  destacado: boolean
 }
 
-const Loja = ({ image, title, description, infos, avaliacao }: Props) => {
+const Loja = ({
+  image,
+  title,
+  description,
+  tipo,
+  avaliacao,
+  id,
+  destacado
+}: Props) => {
   return (
     <>
-      <S.Card>
+      <S.Card to={`/cardapip/${id}`}>
         <S.ComponentsInfo>
-          {infos.map((info) => (
-            <Tag typeOfTag="info" key={info}>
-              {info}
-            </Tag>
-          ))}
+          <Tag typeOfTag="info">{tipo}</Tag>
+          {destacado && (
+            <>
+              <Tag typeOfTag="info">em destaque</Tag>
+            </>
+          )}
         </S.ComponentsInfo>
         <S.LogoCard src={image} />
 
