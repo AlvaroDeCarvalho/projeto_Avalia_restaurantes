@@ -9,13 +9,18 @@ type Props = {
 }
 interface ModelState {
   isVisible: boolean
+  url: string
 }
 const ItemList = ({ restaurante }: Props) => {
   const [model, setModel] = useState<ModelState>({
-    isVisible: false
+    isVisible: false,
+    url: ''
   })
   const exitModal = () => {
-    return setModel({ isVisible: false })
+    return setModel({
+      isVisible: false,
+      url: ''
+    })
   }
   if (!restaurante.cardapio) {
     return <>Carregando...</>
@@ -26,7 +31,10 @@ const ItemList = ({ restaurante }: Props) => {
       <div className="container">
         <S.ContainerItensList>
           {restaurante.cardapio.map((props) => (
-            <li key={props.id} onClick={() => setModel({ isVisible: true })}>
+            <li
+              key={props.id}
+              onClick={() => setModel({ isVisible: true, url: props.foto })}
+            >
               <ItemLoja
                 title={props.nome}
                 imagem={props.foto}
@@ -42,6 +50,7 @@ const ItemList = ({ restaurante }: Props) => {
             <h4>{restaurante.titulo}</h4>
             <img src={closeImage} onClick={() => exitModal()} />
           </header>
+          <img src={model.url} alt="" />
         </S.ModalContent>
         <div className="overlay" onClick={() => exitModal()}></div>
       </S.Modal>
