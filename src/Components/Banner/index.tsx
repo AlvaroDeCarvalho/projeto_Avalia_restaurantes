@@ -8,7 +8,7 @@ type Props = {
 const Banner = ({ restaurante }: Props) => {
   return (
     <>
-      <S.BannerContainer>
+      <S.BannerContainer backgroundCover={restaurante.capa}>
         <div className="container">
           <S.ElementContainer>
             <p> {restaurante.tipo}</p>

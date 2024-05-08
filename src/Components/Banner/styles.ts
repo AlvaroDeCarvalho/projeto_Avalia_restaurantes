@@ -1,13 +1,31 @@
 import styled from 'styled-components'
-import Banner from '../../assents/image/imagemdefundo.png'
 import { cores } from '../../styles'
-export const BannerContainer = styled.div`
-  background-image: url(${Banner});
+
+type Props = {
+  backgroundCover: string
+}
+
+export const BannerContainer = styled.div<Props>`
+  position: relative;
+  background-image: url(${(props) => props.backgroundCover});
   background-size: cover;
   background-repeat: no-repeat;
   height: 280px;
   width: 100%;
   margin-bottom: 56px;
+  .container {
+    position: relative;
+    z-index: 1;
+  }
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 `
 
 export const ElementContainer = styled.div`

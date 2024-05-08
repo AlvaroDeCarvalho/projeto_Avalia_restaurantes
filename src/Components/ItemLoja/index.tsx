@@ -1,5 +1,4 @@
 import * as S from './styles'
-
 type Props = {
   imagem: string
   title: string

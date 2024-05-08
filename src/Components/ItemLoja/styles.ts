@@ -22,6 +22,7 @@ export const Card = styled.div`
     }
   }
 `
+
 export const Botao = styled.button`
   margin-top: 8px;
   padding: 4px;
