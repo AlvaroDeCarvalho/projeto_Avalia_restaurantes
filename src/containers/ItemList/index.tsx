@@ -84,7 +84,7 @@ const ItemList = ({ restaurante }: Props) => {
             <div>
               <h2>{item.nome}</h2>
               <p>{item.descricao}</p>
-              <p>{item.qntServe}</p>
+              <p>Serve: de {item.qntServe}</p>
               <S.Botao>
                 adicionar o carrinho - {formatPrice(item.preco)}
               </S.Botao>
