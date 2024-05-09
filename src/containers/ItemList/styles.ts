@@ -29,7 +29,7 @@ export const Modal = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.73);
+    background-color: rgba(0, 0, 0, 0.8);
   }
 `
 export const ModalContent = styled.div`
@@ -60,9 +60,12 @@ export const ModalContent = styled.div`
     gap: 18px;
     color: ${cores.branca};
     h2 {
+      size: 18px;
+      font-weight: 900;
       margin-bottom: 16px;
     }
     p {
+      font-size: 14px;
       margin-bottom: 16px;
     }
     img {
