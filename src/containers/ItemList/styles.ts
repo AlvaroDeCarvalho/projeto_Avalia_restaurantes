@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { cores } from '../../styles'
 
 export const ContainerItensList = styled.div`
   display: grid;
@@ -32,27 +33,51 @@ export const Modal = styled.div`
   }
 `
 export const ModalContent = styled.div`
-  max-width: 960px;
+  max-width: 1024px;
+  max-height: 344px;
+  width: 100%;
+  height: 100%;
+  background-color: ${cores.Salmao};
   position: relative;
   z-index: 1;
   header {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 24px;
-
+    align-items: flex-end;
+    justify-content: flex-end;
     h4 {
       font-family: 18px;
       font-weight: bold;
     }
     img {
+      padding: 8px;
       cursor: pointer;
     }
   }
-  > img {
-    width: 100%;
+  tbody {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 0 32px 32px 32px;
+    gap: 18px;
+    color: ${cores.branca};
+    h2 {
+      margin-bottom: 16px;
+    }
+    p {
+      margin-bottom: 16px;
+    }
+    img {
+      object-fit: cover;
+      height: 280px;
+      width: 280px;
+    }
   }
-  img {
-    display: block;
-    max-width: 100%;
-  }
+`
+export const Botao = styled.button`
+  font-weight: 900;
+  margin-top: 8px;
+  padding: 4px;
+  border: none;
+  width: 218px;
+  background-color: ${cores.salmaoClaro};
+  color: ${cores.Salmao};
 `
