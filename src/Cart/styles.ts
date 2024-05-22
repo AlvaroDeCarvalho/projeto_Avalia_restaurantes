@@ -11,6 +11,7 @@ export const Overlay = styled.div`
   height: 100%;
   background-color: #000;
   opacity: 0.7;
+  cursor: pointer;
 `
 
 export const CartContainer = styled.div`
@@ -85,6 +86,7 @@ export const Delete = styled.button`
   border: none;
   bottom: 16px;
   right: 16px;
+  cursor: pointer;
 `
 
 export const FinalContainer = styled.div`
