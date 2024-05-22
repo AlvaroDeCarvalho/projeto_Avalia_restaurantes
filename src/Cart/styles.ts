@@ -36,6 +36,7 @@ export const SideBar = styled.aside`
   padding: 40px 16px 0 16px;
 
   ${Botao} {
+    font-weight: bold;
     width: 100%;
   }
 `
@@ -84,4 +85,11 @@ export const Delete = styled.button`
   border: none;
   bottom: 16px;
   right: 16px;
+`
+
+export const FinalContainer = styled.div`
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  color: ${cores.branca};
 `

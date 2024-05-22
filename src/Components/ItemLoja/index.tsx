@@ -20,7 +20,7 @@ const ItemLoja = ({ description, imagem, title }: Props) => {
 
           <p>{description}</p>
         </div>
-        <S.Botao>Adicionar Carrinho </S.Botao>
+        <S.Botao>Mais detalhes </S.Botao>
       </S.Card>
     </>
   )

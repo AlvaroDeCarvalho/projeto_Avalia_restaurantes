@@ -102,7 +102,12 @@ const ItemList = ({ restaurante }: Props) => {
               <h2>{item.nome}</h2>
               <p>{item.descricao}</p>
               <p>Serve: de {item.qntServe}</p>
-              <S.Botao onClick={addItemToCart}>
+              <S.Botao
+                onClick={() => {
+                  addItemToCart()
+                  exitModal()
+                }}
+              >
                 adicionar o carrinho - {formatPrice(item.preco)}
               </S.Botao>
             </div>

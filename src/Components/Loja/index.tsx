@@ -27,16 +27,25 @@ const Loja = ({
   id,
   destacado
 }: Props) => {
+  const getTagsInfos = () => {
+    const tags: string[] = []
+
+    if (destacado) tags.push('Em destaque')
+
+    if (tipo) tags.push(tipo)
+
+    return tags
+  }
+
   return (
     <>
       <S.Card to={`/cardapio/${id}`}>
         <S.ComponentsInfo>
-          <Tag typeOfTag="info">{tipo}</Tag>
-          {destacado && (
-            <>
-              <Tag typeOfTag="info">em destaque</Tag>
-            </>
-          )}
+          {getTagsInfos().map((tag, index) => (
+            <Tag key={index} typeOfTag="info">
+              {tag}
+            </Tag>
+          ))}
         </S.ComponentsInfo>
         <S.LogoCard src={image} />
 
