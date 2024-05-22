@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom'
 import Router from './routes'
 import Footer from './Components/Footer'
 import { Provider } from 'react-redux'
-import store from './store'
+import store from './store/index'
 import Cart from './Cart'
 function App() {
   return (

@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import api from '../services/api'
-import cartReducer from '../Cart'
+import cartReducer from './Reducer/cart'
 
 const store = configureStore({
   reducer: {
@@ -11,6 +11,6 @@ const store = configureStore({
     getDefaultMiddleware().concat(api.middleware)
 })
 
-export type RootState = ReturnType<typeof store.getState>
+export type RootReducer = ReturnType<typeof store.getState>
 
 export default store

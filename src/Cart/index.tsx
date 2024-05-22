@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux'
-import { RootState } from '../store/index'
 import * as S from './styles'
 import { formatPrice } from '../containers/ItemList'
+import { RootReducer } from '../store'
 import { newItemSelect } from '../store/Reducer/cart'
 
 const Cart = () => {
-  const { isOpen, items } = useSelector((state: RootState) => state.cart)
+  const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
 
   return (
     <S.CartContainer className={isOpen ? 'open' : ''}>
