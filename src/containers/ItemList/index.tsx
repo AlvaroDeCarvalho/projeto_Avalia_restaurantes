@@ -6,7 +6,7 @@ import * as S from './styles'
 import closeImage from '../../assents/close.png'
 import { useDispatch } from 'react-redux'
 
-import { add, open } from '../../store/Cart'
+import { add, open } from '../../store/Reducer/cart'
 
 type Props = {
   restaurante: ObjectStore

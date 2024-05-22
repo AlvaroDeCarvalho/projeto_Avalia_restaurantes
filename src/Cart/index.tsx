@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux'
-import { RootState } from '../store'
+import { RootState } from '../store/index'
 import * as S from './styles'
 import { formatPrice } from '../containers/ItemList'
-import { newItemSelect } from '../store/Cart'
+import { newItemSelect } from '../store/Reducer/cart'
 
 const Cart = () => {
   const { isOpen, items } = useSelector((state: RootState) => state.cart)
