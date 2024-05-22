@@ -4,11 +4,17 @@ import { doneDescription } from '../../Components/Loja'
 import { ObjectStore } from '../../pages/Home'
 import * as S from './styles'
 import closeImage from '../../assents/close.png'
+import { useDispatch } from 'react-redux'
+
+import { add, open } from '../../store/Cart'
+
 type Props = {
   restaurante: ObjectStore
 }
 
-interface ItemSelection {
+export type ItemSelection = {
+  id: number
+  foto: string
   nome: string
   descricao: string
   qntServe: string
@@ -28,7 +34,15 @@ export const formatPrice = (price: number) => {
 }
 
 const ItemList = ({ restaurante }: Props) => {
+  const dispatch = useDispatch()
+
+  const addItemToCart = () => {
+    dispatch(add(item))
+    dispatch(open())
+  }
   const [item, setItem] = useState<ItemSelection>({
+    id: 0,
+    foto: '',
     nome: '',
     descricao: '',
     qntServe: '',
@@ -58,6 +72,8 @@ const ItemList = ({ restaurante }: Props) => {
               onClick={() => {
                 setModel({ isVisible: true, url: props.foto })
                 setItem({
+                  id: props.id,
+                  foto: props.foto,
                   nome: props.nome,
                   descricao: props.descricao,
                   qntServe: props.porcao,
@@ -69,6 +85,7 @@ const ItemList = ({ restaurante }: Props) => {
                 title={props.nome}
                 imagem={props.foto}
                 description={doneDescription(props.descricao)}
+                store={restaurante}
               />
             </li>
           ))}
@@ -85,7 +102,7 @@ const ItemList = ({ restaurante }: Props) => {
               <h2>{item.nome}</h2>
               <p>{item.descricao}</p>
               <p>Serve: de {item.qntServe}</p>
-              <S.Botao>
+              <S.Botao onClick={addItemToCart}>
                 adicionar o carrinho - {formatPrice(item.preco)}
               </S.Botao>
             </div>

@@ -1,5 +1,5 @@
 import Header from '../../Components/Header'
-import { useGetRestaurantesQuery } from '../../Components/services/api'
+import { useGetRestaurantesQuery } from '../../services/api'
 import LojaList from '../../containers/LojaList'
 
 export type ObjectStore = {
