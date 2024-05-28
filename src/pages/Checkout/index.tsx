@@ -1,28 +1,20 @@
 import { useDispatch, useSelector } from 'react-redux'
+import SideBarComponent from '../../Components/SideBarComponent'
+import { newItemSelect, remove } from '../../store/Reducer/cart'
+import { RootReducer } from '../../store'
+import { formatPrice } from '../../containers/ItemList'
 import * as S from './styles'
-import { formatPrice } from '../containers/ItemList'
-import { RootReducer } from '../store'
-import { newItemSelect } from '../store/Reducer/cart'
-
-import { close, remove } from '../store/Reducer/cart'
-
-import { Botao } from '../Components/ItemLoja/styles'
-
-const Cart = () => {
-  const { isOpen, items } = useSelector((state: RootReducer) => state.cart)
+import { Botao } from '../../Components/ItemLoja/styles'
+const Checkout = () => {
+  const { items } = useSelector((state: RootReducer) => state.cart)
   const dispatch = useDispatch()
-  const closeOverlay = () => {
-    dispatch(close())
-  }
 
   const deleteItem = (id: number) => {
     dispatch(remove(id))
   }
-
   return (
-    <S.CartContainer className={isOpen ? 'open' : ''}>
-      <S.Overlay onClick={closeOverlay} />
-      <S.SideBar>
+    <SideBarComponent>
+      <>
         <ul>
           {items.map((item: newItemSelect) => (
             <S.itemCarrinho key={item.id}>
@@ -40,9 +32,9 @@ const Cart = () => {
           <p>{formatPrice(items.reduce((acc, item) => acc + item.preco, 0))}</p>
         </S.FinalContainer>
         <Botao>Continuar com a entrega</Botao>
-      </S.SideBar>
-    </S.CartContainer>
+      </>
+    </SideBarComponent>
   )
 }
 
-export default Cart
+export default Checkout

@@ -4,7 +4,7 @@ import Router from './routes'
 import Footer from './Components/Footer'
 import { Provider } from 'react-redux'
 import store from './store/index'
-import Cart from './Cart'
+import Checkout from './pages/Checkout'
 function App() {
   return (
     <>
@@ -13,7 +13,7 @@ function App() {
         <BrowserRouter>
           <Router />
           <Footer />
-          <Cart />
+          <Checkout />
         </BrowserRouter>
       </Provider>
     </>
