@@ -57,3 +57,45 @@ export const FinalContainer = styled.div`
   justify-content: space-between;
   color: ${cores.branca};
 `
+
+export const InputGrup = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 8px 0 8px 0;
+  }
+
+  input {
+    height: 32px;
+    background-color: ${cores.salmaoClaro};
+    border: 1px solid ${cores.salmaoClaro};
+  }
+`
+
+export const FormContainer = styled.form`
+  display: block;
+  color: ${cores.salmaoClaro};
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  .adressContainer {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .cardNumberContainer {
+    display: grid;
+    grid-row: 8px;
+    grid-template-columns: 70 30;
+  }
+`
+
+export const ButtonContainer = styled.div`
+  margin-top: 40px;
+`

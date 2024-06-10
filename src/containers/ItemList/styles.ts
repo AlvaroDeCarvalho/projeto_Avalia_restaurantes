@@ -83,4 +83,5 @@ export const Botao = styled.button`
   width: 218px;
   background-color: ${cores.salmaoClaro};
   color: ${cores.Salmao};
+  cursor: pointer;
 `
