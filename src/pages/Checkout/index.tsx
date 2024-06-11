@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import * as S from './styles'
 
@@ -9,15 +10,30 @@ import { Botao } from '../../Components/ItemLoja/styles'
 import { formatPrice } from '../../containers/ItemList'
 
 import { RootReducer } from '../../store'
+import { close } from '../../store/Reducer/cart'
 
 const Checkout = () => {
   const { items } = useSelector((state: RootReducer) => state.cart)
   const dispatch = useDispatch()
+
   const [stateCheckoutCart, setStateCheckout] = useState(true)
   const [stateCheckoutAdress, setStateCheckoutAdress] = useState(false)
   const [behovior, setBehovior] = useState(false)
+  const navigate = useNavigate()
+
+  const closeOverlay = () => {
+    dispatch(close())
+  }
+
   const deleteItem = (id: number) => {
     dispatch(remove(id))
+  }
+
+  const concluded = () => {
+    navigate('/')
+    closeOverlay()
+    setStateCheckout(true)
+    setBehovior(false)
   }
 
   return (
@@ -100,11 +116,49 @@ const Checkout = () => {
                 </>
               ) : (
                 <>
-                  <h1>Pagamento</h1>
-                  <button onClick={() => setBehovior(true)}>Clique aqui</button>
-                  <button onClick={() => setStateCheckoutAdress(false)}>
-                    Voltar
-                  </button>
+                  <S.FormContainer>
+                    <h2>
+                      Pagamento - valor:{' '}
+                      {formatPrice(
+                        items.reduce((acc, item) => acc + item.preco, 0)
+                      )}
+                    </h2>
+                    <S.InputGrup>
+                      <label htmlFor="clientCard">Nome no cartao</label>
+                      <input type="text" id="clientCard" />
+                    </S.InputGrup>
+
+                    <div className="cardNumberContainer">
+                      <S.InputGrup>
+                        <label htmlFor="cardNumber">Numero do cartão</label>
+                        <input type="text" id="cardNumber" />
+                      </S.InputGrup>
+
+                      <S.InputGrup>
+                        <label htmlFor="cvv">CVV</label>
+                        <input type="text" id="cvv" />
+                      </S.InputGrup>
+                    </div>
+                    <div className="cardContainerDate">
+                      <S.InputGrup>
+                        <label htmlFor="dueMonth">mes do vencimento</label>
+                        <input type="text" id="dueMonth" />
+                      </S.InputGrup>
+
+                      <S.InputGrup>
+                        <label htmlFor="duoYear">Ano de vencimento</label>
+                        <input type="text" id="duoYear" />
+                      </S.InputGrup>
+                    </div>
+                  </S.FormContainer>
+                  <S.ButtonContainer>
+                    <Botao onClick={() => setBehovior(true)}>
+                      Finalizar pagamento
+                    </Botao>
+                    <Botao onClick={() => setStateCheckoutAdress(false)}>
+                      voltar para a edição de endereço
+                    </Botao>
+                  </S.ButtonContainer>
                 </>
               )}
             </>
@@ -112,7 +166,27 @@ const Checkout = () => {
         </>
       ) : (
         <>
-          <h1>Obrigado por assistir </h1>
+          <S.BehaviorContainer>
+            <h2>Pedido realizado - 10043</h2>
+            <p>
+              Estamos felizes em informar que seu pedido já está em processo de
+              preparação e, em breve, será entregue no endereço fornecido.
+            </p>
+            <p>
+              Gostaríamos de ressaltar que nossos entregadores não estão
+              autorizados a realizar cobranças extras.
+            </p>
+            <p>
+              Lembre-se da importância de higienizar as mãos após o recebimento
+              do pedido, garantindo assim sua segurança e bem-estar durante a
+              refeição.
+            </p>
+            <p>
+              Esperamos que desfrute de uma deliciosa e agradável experiência
+              gastronômica. Bom apetite!
+            </p>
+          </S.BehaviorContainer>
+          <Botao onClick={concluded}>Concluir</Botao>
         </>
       )}
     </SideBarComponent>

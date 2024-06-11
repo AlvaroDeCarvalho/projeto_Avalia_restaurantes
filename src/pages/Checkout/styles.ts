@@ -91,8 +91,30 @@ export const FormContainer = styled.form`
 
   .cardNumberContainer {
     display: grid;
-    grid-row: 8px;
-    grid-template-columns: 70 30;
+    gap: 32px;
+    grid-template-columns: 70% 20%;
+  }
+  .cardContainerDate {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr 1fr;
+  }
+`
+
+export const BehaviorContainer = styled.div`
+  color: ${cores.salmaoClaro};
+  display: block;
+
+  h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+
+  p {
+    font-weight: 300;
+    font-size: 14px;
+    margin-bottom: 16px;
   }
 `
 

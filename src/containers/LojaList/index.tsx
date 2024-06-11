@@ -1,7 +1,6 @@
 import * as S from './styles'
 
 import Loja from '../../Components/Loja/index'
-import { ObjectStore } from '../../pages/Home'
 
 type Props = {
   restaurantes: ObjectStore[]

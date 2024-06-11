@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import ItemLoja from '../../Components/ItemLoja'
 import { doneDescription } from '../../Components/Loja'
-import { ObjectStore } from '../../pages/Home'
 import * as S from './styles'
 import closeImage from '../../assents/close.png'
 import { useDispatch } from 'react-redux'

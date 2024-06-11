@@ -1,7 +1,5 @@
 import * as S from './styles'
 
-import { ObjectStore } from '../../pages/Home'
-
 type Props = {
   imagem: string
   title: string
