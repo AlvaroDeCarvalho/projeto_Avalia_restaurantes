@@ -73,6 +73,10 @@ export const InputGrup = styled.div`
     background-color: ${cores.salmaoClaro};
     border: 1px solid ${cores.salmaoClaro};
   }
+  small {
+    font-weight: 800;
+    color: red;
+  }
 `
 
 export const FormContainer = styled.form`

@@ -6,6 +6,27 @@ type Product = {
 }
 type PurchasePayload = {
   items: Product[]
+  delivery: {
+    receiver: string
+    adress: {
+      description: string
+      city: string
+      zipCode: string
+      number: string
+      complement?: string
+    }
+    payment: {
+      card: {
+        name: string
+        number: string
+        code: string
+        exprires: {
+          month: string
+          year: string
+        }
+      }
+    }
+  }
 }
 
 type PurscheResponse = {
@@ -34,6 +55,10 @@ export const api = createApi({
   })
 })
 
-export const { useGetRestaurantesQuery, useGetRestauranteQuery } = api
+export const {
+  useGetRestaurantesQuery,
+  useGetRestauranteQuery,
+  usePurscheMutation
+} = api
 
 export default api
