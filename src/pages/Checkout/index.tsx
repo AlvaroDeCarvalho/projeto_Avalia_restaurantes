@@ -26,6 +26,8 @@ const Checkout = () => {
 
   const [purchase, { isSuccess, data }] = usePurchaseMutation()
 
+  console.log(isSuccess)
+
   const closeOverlay = () => {
     dispatch(close())
   }
@@ -117,7 +119,7 @@ const Checkout = () => {
             }
           }
         },
-        items: [{ id: 1, price: 100 }]
+        products: [{ id: 1, price: 100 }]
       })
     }
   })
@@ -254,6 +256,7 @@ const Checkout = () => {
                   </S.FormContainer>
                   <S.ButtonContainer>
                     <Botao
+                      type="submit"
                       onClick={() => {
                         setStateCheckoutAdress(true)
                         form.handleSubmit()
@@ -357,7 +360,7 @@ const Checkout = () => {
                     </div>
                   </S.FormContainer>
                   <S.ButtonContainer>
-                    <Botao onClick={() => form.handleSubmit()}>
+                    <Botao type="submit" onClick={() => form.handleSubmit()}>
                       Finalizar pagamento
                     </Botao>
                     <Botao onClick={() => setStateCheckoutAdress(false)}>
