@@ -4,32 +4,33 @@ type Product = {
   id: number
   price: number
 }
+
 type PurchasePayload = {
   items: Product[]
   delivery: {
     receiver: string
-    adress: {
+    address: {
       description: string
       city: string
       zipCode: string
-      number: string
+      number: number
       complement?: string
     }
-    payment: {
-      card: {
-        name: string
-        number: string
-        code: string
-        exprires: {
-          month: string
-          year: string
-        }
+  }
+  payment: {
+    card: {
+      name: string
+      number: string
+      code: number
+      expires: {
+        month: number
+        year: number
       }
     }
   }
 }
 
-type PurscheResponse = {
+type PurchaseResponse = {
   orderId: string
 }
 
@@ -45,7 +46,7 @@ export const api = createApi({
     getRestaurante: builder.query<ObjectStore, string>({
       query: (id) => `/restaurantes/${id}`
     }),
-    pursche: builder.mutation<PurscheResponse, PurchasePayload>({
+    purchase: builder.mutation<PurchaseResponse, PurchasePayload>({
       query: (body) => ({
         url: 'checkout',
         method: 'POST',
@@ -58,7 +59,7 @@ export const api = createApi({
 export const {
   useGetRestaurantesQuery,
   useGetRestauranteQuery,
-  usePurscheMutation
+  usePurchaseMutation
 } = api
 
 export default api

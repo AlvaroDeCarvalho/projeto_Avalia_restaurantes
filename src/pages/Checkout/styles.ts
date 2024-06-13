@@ -58,7 +58,7 @@ export const FinalContainer = styled.div`
   color: ${cores.branca};
 `
 
-export const InputGrup = styled.div`
+export const InputGroup = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -75,7 +75,7 @@ export const InputGrup = styled.div`
   }
   small {
     font-weight: 800;
-    color: red;
+    color: ${cores.backgroundColor};
   }
 `
 
