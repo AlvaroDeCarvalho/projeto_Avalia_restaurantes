@@ -3,18 +3,21 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import * as S from './styles'
+import { Botao } from '../../Components/ItemLoja/styles'
 
 import SideBarComponent from '../../Components/SideBarComponent'
-import { newItemSelect, remove } from '../../store/Reducer/cart'
-import { Botao } from '../../Components/ItemLoja/styles'
 import { formatPrice } from '../../containers/ItemList'
 
+import { newItemSelect, remove } from '../../store/Reducer/cart'
 import { RootReducer } from '../../store'
 import { close } from '../../store/Reducer/cart'
+
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
 
 import { usePurchaseMutation } from '../../services/api'
+
+import InputMask from 'react-input-mask'
 
 const Checkout = () => {
   const { items } = useSelector((state: RootReducer) => state.cart)
@@ -212,12 +215,13 @@ const Checkout = () => {
                     <div className="adressContainer">
                       <S.InputGroup>
                         <label htmlFor="cep">cep</label>
-                        <input
+                        <InputMask
                           type="text"
                           id="cep"
                           value={form.values.cep}
                           onBlur={form.handleBlur}
                           onChange={form.handleChange}
+                          mask={'99999-999'}
                         />
 
                         <small>{getMessageError('cep', form.errors.cep)}</small>
@@ -259,7 +263,6 @@ const Checkout = () => {
                       type="submit"
                       onClick={() => {
                         setStateCheckoutAdress(true)
-                        form.handleSubmit()
                       }}
                     >
                       Continuar com o pagamento
@@ -299,12 +302,13 @@ const Checkout = () => {
                     <div className="cardNumberContainer">
                       <S.InputGroup>
                         <label htmlFor="cardNumber">Numero do cartão</label>
-                        <input
+                        <InputMask
                           type="text"
                           id="cardNumber"
                           value={form.values.cardNumber}
                           onBlur={form.handleBlur}
                           onChange={form.handleChange}
+                          mask={'9999-9999-9999-9999'}
                         />
 
                         <small>
@@ -317,12 +321,13 @@ const Checkout = () => {
 
                       <S.InputGroup>
                         <label htmlFor="cvv">CVV</label>
-                        <input
+                        <InputMask
                           type="text"
                           id="cvv"
                           value={form.values.cvv}
                           onBlur={form.handleBlur}
                           onChange={form.handleChange}
+                          mask={'999'}
                         />
 
                         <small>{getMessageError('cvv', form.errors.cvv)}</small>
@@ -331,12 +336,13 @@ const Checkout = () => {
                     <div className="cardContainerDate">
                       <S.InputGroup>
                         <label htmlFor="dueMonth">mes do vencimento</label>
-                        <input
+                        <InputMask
                           type="text"
                           id="dueMonth"
                           value={form.values.dueMonth}
                           onBlur={form.handleBlur}
                           onChange={form.handleChange}
+                          mask={'99'}
                         />
                         <small>
                           {getMessageError('dueMonth', form.errors.dueMonth)}
@@ -345,12 +351,13 @@ const Checkout = () => {
 
                       <S.InputGroup>
                         <label htmlFor="dueYear">Ano de vencimento</label>
-                        <input
+                        <InputMask
                           type="text"
                           id="dueYear"
                           value={form.values.dueYear}
                           onBlur={form.handleBlur}
                           onChange={form.handleChange}
+                          mask={'9999'}
                         />
 
                         <small>
