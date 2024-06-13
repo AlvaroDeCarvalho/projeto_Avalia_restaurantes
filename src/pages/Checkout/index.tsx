@@ -367,7 +367,12 @@ const Checkout = () => {
                     </div>
                   </S.FormContainer>
                   <S.ButtonContainer>
-                    <Botao type="submit" onClick={() => form.handleSubmit()}>
+                    <Botao
+                      type="submit"
+                      onClick={() => {
+                        if (form.isValid) form.handleSubmit()
+                      }}
+                    >
                       Finalizar pagamento
                     </Botao>
                     <Botao onClick={() => setStateCheckoutAdress(false)}>
