@@ -29,8 +29,6 @@ const Checkout = () => {
 
   const [purchase, { isSuccess, data }] = usePurchaseMutation()
 
-  console.log(isSuccess)
-
   const closeOverlay = () => {
     dispatch(close())
   }
@@ -134,6 +132,7 @@ const Checkout = () => {
     if (isTouched && isError) return message
     return ''
   }
+  console.log(form)
   return (
     <SideBarComponent>
       {!isSuccess ? (
@@ -262,7 +261,15 @@ const Checkout = () => {
                     <Botao
                       type="submit"
                       onClick={() => {
-                        setStateCheckoutAdress(true)
+                        if (
+                          form.values.client.length > 0 &&
+                          form.values.address.length > 0 &&
+                          form.values.city.length > 0 &&
+                          form.values.cep.length > 0 &&
+                          form.values.number.length > 0
+                        ) {
+                          setStateCheckoutAdress(true)
+                        }
                       }}
                     >
                       Continuar com o pagamento
