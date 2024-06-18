@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import * as S from './styles'
@@ -10,7 +10,7 @@ import { formatPrice } from '../../containers/ItemList'
 
 import { newItemSelect, remove } from '../../store/Reducer/cart'
 import { RootReducer } from '../../store'
-import { close } from '../../store/Reducer/cart'
+import { close, clean } from '../../store/Reducer/cart'
 
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -25,10 +25,10 @@ const Checkout = () => {
 
   const [stateCheckoutCart, setStateCheckout] = useState(true)
   const [stateCheckoutAdress, setStateCheckoutAdress] = useState(false)
+  const [success, setSuccess] = useState(false)
   const navigate = useNavigate()
 
-  const [purchase, { isSuccess, data }] = usePurchaseMutation()
-
+  const [purchase, { data, isSuccess }] = usePurchaseMutation()
   const closeOverlay = () => {
     dispatch(close())
   }
@@ -37,10 +37,16 @@ const Checkout = () => {
     dispatch(remove(id))
   }
 
+  const cleanCart = () => {
+    dispatch(clean())
+  }
+
   const concluded = () => {
     navigate('/')
     closeOverlay()
     setStateCheckout(true)
+    setSuccess(false)
+    cleanCart()
   }
   const form = useFormik({
     initialValues: {
@@ -125,6 +131,12 @@ const Checkout = () => {
     }
   })
 
+  useEffect(() => {
+    if (isSuccess) {
+      setSuccess(true)
+    }
+  }, [isSuccess])
+
   const getMessageError = (field: string, message?: string) => {
     const isTouched = field in form.touched
     const isError = field in form.errors
@@ -132,10 +144,9 @@ const Checkout = () => {
     if (isTouched && isError) return message
     return ''
   }
-  console.log(form)
   return (
     <SideBarComponent>
-      {!isSuccess ? (
+      {!success ? (
         <>
           {stateCheckoutCart ? (
             <>
@@ -377,7 +388,9 @@ const Checkout = () => {
                     <Botao
                       type="submit"
                       onClick={() => {
-                        if (form.isValid) form.handleSubmit()
+                        if (form.isValid) {
+                          form.handleSubmit()
+                        }
                       }}
                     >
                       Finalizar pagamento

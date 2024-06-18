@@ -28,9 +28,12 @@ const cartState = createSlice({
     },
     close: (state) => {
       state.isOpen = false
+    },
+    clean: (state) => {
+      state.items = []
     }
   }
 })
 
-export const { add, remove, open, close } = cartState.actions
+export const { add, remove, open, close, clean } = cartState.actions
 export default cartState.reducer
