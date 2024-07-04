@@ -7,6 +7,11 @@ export const ContainerItensList = styled.div`
   gap: 32px;
   margin-bottom: 120px;
   list-style: none;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 `
 export const Modal = styled.div`
   position: fixed;
@@ -30,6 +35,11 @@ export const Modal = styled.div`
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
+  }
+  @media (max-width: 787px) {
+    .overlay {
+      padding: 16px; /* Espaçamento interno */
+    }
   }
 `
 export const ModalContent = styled.div`
@@ -67,11 +77,25 @@ export const ModalContent = styled.div`
     p {
       font-size: 14px;
       margin-bottom: 16px;
+
+      @media (max-width: 768px) {
+        font-size: 12px;
+      }
     }
     img {
       object-fit: cover;
       height: 280px;
       width: 280px;
+
+      @media (max-width: 768px) {
+        height: 140px;
+        width: 140px;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      display: flex;
     }
   }
 `

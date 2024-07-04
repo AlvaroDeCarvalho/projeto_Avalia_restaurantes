@@ -17,6 +17,10 @@ const GlobalStyles = createGlobalStyle`
     .container {
       width: 1024px;
       margin: 0 auto;
+
+      @media (max-width: 1024px) {
+        max-width: 80%;
+      }
     }
 `
 
