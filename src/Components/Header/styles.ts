@@ -62,10 +62,21 @@ export const ItensCarrinho = styled.div`
   }
 `
 export const Text = styled.h2<Props>`
+  display: flex;
   font-size: ${(props) => (props.tamanho === 'big' ? '36px' : '18px')};
   font-weight: bold;
+  align-items: center;
+  text-align: center;
   line-height: ${(props) => (props.tamanho === 'big' ? '36px' : '22px')};
   color: ${cores.Salmao};
+
+  img {
+    margin-left: 8px;
+    cursor: pointer;
+  }
+  span {
+    margin-left: 8px;
+  }
 `
 
 export const Item = styled.div`

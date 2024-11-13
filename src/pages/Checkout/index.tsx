@@ -388,9 +388,8 @@ const Checkout = () => {
                     <Botao
                       type="submit"
                       onClick={() => {
-                        if (form.isValid) {
-                          form.handleSubmit()
-                        }
+                        form.handleSubmit()
+                        setSuccess(true)
                       }}
                     >
                       Finalizar pagamento
@@ -426,7 +425,9 @@ const Checkout = () => {
               gastronômica. Bom apetite!
             </p>
           </S.BehaviorContainer>
-          <Botao onClick={concluded}>Concluir</Botao>
+          <Botao type="button" onClick={concluded}>
+            Concluir
+          </Botao>
         </>
       )}
     </SideBarComponent>

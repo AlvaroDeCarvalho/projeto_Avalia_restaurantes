@@ -39,7 +39,7 @@ const Loja = ({
 
   return (
     <>
-      <S.Card to={`/cardapio/${id}`}>
+      <S.Card to={`cardapio/${id}`}>
         <S.ComponentsInfo>
           {getTagsInfos().map((tag, index) => (
             <Tag key={index} typeOfTag="info">
@@ -48,12 +48,11 @@ const Loja = ({
           ))}
         </S.ComponentsInfo>
         <S.LogoCard src={image} />
-
         <S.ContainerAvalicao>
           <S.Titulo>{title}</S.Titulo>
           <div>
             <p>{avaliacao}</p>
-            <img src={estrela} />
+            <img src={estrela} alt="Estrela" />
           </div>
         </S.ContainerAvalicao>
         <S.Paragrafo>{doneDescription(description)}</S.Paragrafo>

@@ -5,10 +5,18 @@ export const Card = styled.div`
   background-color: ${cores.Salmao};
   padding: 8px;
   color: ${cores.salmaoClaro};
+  overflow-y: hidden;
+  width: 100%;
+  max-width: 100%;
   img {
     height: 250px;
     width: 100%;
     object-fit: cover;
+
+    @media (max-width: 768px) {
+      height: 200px;
+      width: 100%;
+    }
   }
   div {
     h3 {
@@ -19,6 +27,7 @@ export const Card = styled.div`
     p {
       font-size: 14px;
       font-weight: 400;
+      max-width: 100%;
     }
   }
 `
@@ -27,7 +36,7 @@ export const Botao = styled.button`
   margin-top: 8px;
   padding: 4px;
   border: none;
-  width: 100%;
+  max-width: 100%;
   background-color: ${cores.salmaoClaro};
   color: ${cores.Salmao};
   cursor: pointer;

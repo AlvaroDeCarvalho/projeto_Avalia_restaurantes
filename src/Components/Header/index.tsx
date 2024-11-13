@@ -3,13 +3,18 @@ import { useState } from 'react'
 import * as S from './styles'
 
 import Logo from '../../assents/image/logo.png'
-import carrinho from '../../assents//image/cart.png'
+import carrinho from '../../assents//image/cart.svg'
+
+import { useDispatch } from 'react-redux'
+import { open } from '../../store/Reducer/cart'
+
 type Props = {
   typeHeader: 'Home' | 'Cardapio'
 }
 const Header = ({ typeHeader }: Props) => {
   const [isMenuOpen] = useState(false)
-  console.log(isMenuOpen)
+
+  const dispatch = useDispatch()
 
   if (typeHeader === 'Home') {
     return (
@@ -36,8 +41,8 @@ const Header = ({ typeHeader }: Props) => {
                 <S.LinkRestaurante to={'/'}>Restaurantes</S.LinkRestaurante>
                 <S.ImagemLogo src={Logo} />
                 <S.Text tamanho="small">
-                  0 <span>produto(s) no carrinho</span>{' '}
-                  <img src={carrinho} alt="" />
+                  0 <span>Produtos(s)</span>{' '}
+                  <img src={carrinho} alt="" onClick={() => dispatch(open())} />
                 </S.Text>
               </S.Item>
             </S.ItensCarrinho>
